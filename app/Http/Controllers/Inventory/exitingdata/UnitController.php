@@ -28,7 +28,7 @@ class UnitController extends Controller
      */
     public function create()
     {
-       //
+        //
     }
 
     /**
@@ -40,36 +40,36 @@ class UnitController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-        'sub_group_id' => 'required',
-        'code_units' => 'required',
-        'name' => 'required',
-        'item_code' => 'required',
-        // 'd_cu' => 'nullable',
-        'list_no' => 'nullable',
-        'drawing_no' => 'nullable',
-        'vendor' => 'nullable',
-        'type' => 'nullable',
-        'serial' => 'nullable',
-        'interval' => 'required',
-        'start_job' => 'required',
-        'end_job' => 'required',
-        'issue_by' => 'nullable',
-        'certificate_no' => 'nullable',
-        'specification_detail' => 'nullable',
-        'maintenance_detail' => 'nullable',
-        'number_approval' => 'nullable',
-        'date_approval' => 'nullable',
-        'pnd_place' => 'nullable',
-        'pnd_date' => 'nullable',
-        'validity' => 'nullable',
-        'maker' => 'nullable',
-        'image' => 'nullable',
+            'sub_group_id' => 'required',
+            'code_units' => 'required',
+            'name' => 'required',
+            'item_code' => 'required',
+            // 'd_cu' => 'nullable',
+            'list_no' => 'nullable',
+            'drawing_no' => 'nullable',
+            'vendor' => 'nullable',
+            'type' => 'nullable',
+            'serial' => 'nullable',
+            'interval' => 'required',
+            'start_job' => 'required',
+            'end_job' => 'required',
+            'issue_by' => 'nullable',
+            'certificate_no' => 'nullable',
+            'specification_detail' => 'nullable',
+            'maintenance_detail' => 'nullable',
+            'number_approval' => 'nullable',
+            'date_approval' => 'nullable',
+            'pnd_place' => 'nullable',
+            'pnd_date' => 'nullable',
+            'validity' => 'nullable',
+            'maker' => 'nullable',
+            'image' => 'nullable',
         ]);
 
         // $start_time = Carbon::parse($request->input('start_job'));
         // $end_time = Carbon::parse($request->input('end_job'));
         // $interval_hours = $start_time->diffInHours($end_time);
-        
+
         $input = $request->all();
         // $input['interval'] = $interval_hours;
         $input['uuid'] = Uuid::uuid4();
@@ -113,29 +113,29 @@ class UnitController extends Controller
     public function update(Request $request, $id)
     {
         $this->validate($request, [
-        'sub_group_id' => 'required',
-        'code_units' => 'required',
-        'name' => 'required',
-        'item_code' => 'required',
-        // 'd_cu' => 'nullable',
-        'list_no' => 'nullable',
-        'drawing_no' => 'nullable',
-        'vendor' => 'nullable',
-        'type' => 'nullable',
-        'serial' => 'nullable',
-        'start_job'=>'required',
-        'end_job' => 'required',
-        'issue_by' => 'nullable',
-        'certificate_no' => 'nullable',
-        'specification_detail' => 'nullable',
-        'maintenance_detail' => 'nullable',
-        'number_approval' => 'nullable',
-        'date_approval' => 'nullable',
-        'pnd_place' => 'nullable',
-        'pnd_date' => 'nullable',
-        'validity' => 'nullable',
-        'maker' => 'nullable',
-        'image' => 'nullable',
+            'sub_group_id' => 'required',
+            'code_units' => 'required',
+            'name' => 'required',
+            'item_code' => 'required',
+            // 'd_cu' => 'nullable',
+            'list_no' => 'nullable',
+            'drawing_no' => 'nullable',
+            'vendor' => 'nullable',
+            'type' => 'nullable',
+            'serial' => 'nullable',
+            'start_job' => 'required',
+            'end_job' => 'required',
+            'issue_by' => 'nullable',
+            'certificate_no' => 'nullable',
+            'specification_detail' => 'nullable',
+            'maintenance_detail' => 'nullable',
+            'number_approval' => 'nullable',
+            'date_approval' => 'nullable',
+            'pnd_place' => 'nullable',
+            'pnd_date' => 'nullable',
+            'validity' => 'nullable',
+            'maker' => 'nullable',
+            'image' => 'nullable',
         ]);
 
         $start_time = Carbon::parse($request->input('start_job'));

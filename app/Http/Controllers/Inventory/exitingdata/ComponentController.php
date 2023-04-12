@@ -28,7 +28,7 @@ class ComponentController extends Controller
      */
     public function create()
     {
-        // 
+        //
     }
 
     /**
@@ -51,7 +51,7 @@ class ComponentController extends Controller
             'type' => 'nullable',
             'serial' => 'nullable',
             'issue_by' => 'nullable',
-            'start_job'=>'required',
+            'start_job' => 'required',
             'end_job' => 'required',
             'certificate_no' => 'nullable',
             'specification_detail' => 'nullable',
@@ -68,7 +68,7 @@ class ComponentController extends Controller
         $start_time = Carbon::parse($request->input('start_job'));
         $end_time = Carbon::parse($request->input('end_job'));
         $interval_hours = $start_time->diffInHours($end_time);
-        
+
         $input = $request->all();
         $input['interval'] = $interval_hours;
         $input['uuid'] = Uuid::uuid4();
@@ -124,7 +124,7 @@ class ComponentController extends Controller
             'type' => 'nullable',
             'serial' => 'nullable',
             'issue_by' => 'nullable',
-            'start_job'=>'required',
+            'start_job' => 'required',
             'end_job' => 'required',
             'certificate_no' => 'nullable',
             'specification_detail' => 'nullable',
@@ -141,7 +141,7 @@ class ComponentController extends Controller
         $start_time = Carbon::parse($request->input('start_job'));
         $end_time = Carbon::parse($request->input('end_job'));
         $interval_hours = $start_time->diffInHours($end_time);
-        
+
         $input = $request->all();
         $input['interval'] = $interval_hours;
         $comp = InventoryComponents::findOrFail($id);

@@ -39,7 +39,7 @@ class GroupController extends Controller
      */
     public function store(Request $request)
     {
-        $this->validate($request ,[
+        $this->validate($request, [
             'main_group_id' => 'required',
             'code_group' => 'required|numeric|digits:1',
             'name' => 'required',
@@ -92,8 +92,7 @@ class GroupController extends Controller
         $group->name = $request->input('name');
         $group->save();
         return redirect()->route('exitingdata.index')
-        ->with('success', 'Update successfully');
-
+            ->with('success', 'Update successfully');
     }
 
     /**

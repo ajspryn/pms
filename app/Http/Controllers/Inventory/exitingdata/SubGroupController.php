@@ -17,7 +17,6 @@ class SubGroupController extends Controller
      */
     public function index()
     {
-        
     }
 
     /**
@@ -28,7 +27,7 @@ class SubGroupController extends Controller
     public function create()
     {
         $groups    = InventoryGroups::with('main_group')->paginate(2);
-        return view('inventory.exitingdata.subgroup.create',compact('groups'));
+        return view('inventory.exitingdata.subgroup.create', compact('groups'));
     }
 
     /**
@@ -91,8 +90,7 @@ class SubGroupController extends Controller
         $subgroup->name = $request->input('name');
         $subgroup->save();
         return redirect()->route('exitingdata.index')
-        ->with('success', 'Update successfully');
-
+            ->with('success', 'Update successfully');
     }
 
     /**

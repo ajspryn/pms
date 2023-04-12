@@ -17,7 +17,6 @@ class MainGroupController extends Controller
      */
     public function index()
     {
-        
     }
 
     /**
@@ -87,17 +86,16 @@ class MainGroupController extends Controller
     public function update(Request $request, $id)
     {
         $this->validate($request, [
-            'code_main_group' => 'required|integer|between:0,9'.$id,
-              'name' => 'required',
-            ]);
+            'code_main_group' => 'required|integer|between:0,9' . $id,
+            'name' => 'required',
+        ]);
 
-            $maingroup = InventoryMainGroups::find($id);
-            $input = $request->all();
-            $maingroup->update($input);
+        $maingroup = InventoryMainGroups::find($id);
+        $input = $request->all();
+        $maingroup->update($input);
 
-            return redirect()->route('exitingdata.index')
+        return redirect()->route('exitingdata.index')
             ->with('success', 'Update successfully');
-
     }
 
     /**

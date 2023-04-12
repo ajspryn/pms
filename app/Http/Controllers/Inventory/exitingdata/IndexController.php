@@ -20,13 +20,13 @@ class IndexController extends Controller
      */
     public function index()
     {
-        $maingroup = InventoryMainGroups::with('ship')->get(); 
+        $maingroup = InventoryMainGroups::with('ship')->get();
         $group    = InventoryGroups::whereHas('main_group')->get();
         $subgroup  = InventorySubGroups::whereHas('group.main_group')->get();
         $unit      = InventoryUnits::whereHas('sub_group.group.main_group')->get();
         $component = InventoryComponents::whereHas('unit.sub_group.group.main_group')->get();
         $part      = InventoryParts::whereHas('component.unit.sub_group.group.main_group')->get();
-        return view('inventory.exitingdata.index', compact('maingroup','group','subgroup','unit','component','part'));
+        return view('inventory.exitingdata.index', compact('maingroup', 'group', 'subgroup', 'unit', 'component', 'part'));
     }
 
     /**

@@ -18,7 +18,7 @@ class PartController extends Controller
      */
     public function create()
     {
-       //
+        //
     }
 
     /**
@@ -58,7 +58,7 @@ class PartController extends Controller
         $start_time = Carbon::parse($request->input('start_job'));
         $end_time = Carbon::parse($request->input('end_job'));
         $interval_hours = $start_time->diffInHours($end_time);
-        
+
         $input = $request->all();
         $input['interval'] = $interval_hours;
         $input['uuid'] = Uuid::uuid4();
@@ -129,7 +129,7 @@ class PartController extends Controller
         $start_time = Carbon::parse($request->input('start_job'));
         $end_time = Carbon::parse($request->input('end_job'));
         $interval_hours = $start_time->diffInHours($end_time);
-        
+
         $input = $request->all();
         $input['interval'] = $interval_hours;
         $comp = InventoryParts::findOrFail($id);

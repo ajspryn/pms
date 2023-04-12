@@ -25,7 +25,7 @@ class NewStockController extends Controller
         $unit      = InventoryUnits::whereHas('sub_group.group.main_group')->get();
         $component = InventoryComponents::whereHas('unit.sub_group.group.main_group')->get();
         $ship_id = Ship::where('uuid', session('ship_uuid'))->get()->first();
-        return view('inventory.stock.index', compact('category','part','ship_id','unit','component'));
+        return view('inventory.stock.index', compact('category', 'part', 'ship_id', 'unit', 'component'));
     }
 
     /**
@@ -35,7 +35,6 @@ class NewStockController extends Controller
      */
     public function create()
     {
-        
     }
 
     /**
@@ -47,12 +46,12 @@ class NewStockController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'ship_id'=> 'required',
-            'code_category'=> 'required',
-            'name_category'=> 'required',
-            'stock'=> 'required',
-            'used_stock'=> 'required',
-            'minqty'=> 'required'
+            'ship_id' => 'required',
+            'code_category' => 'required',
+            'name_category' => 'required',
+            'stock' => 'required',
+            'used_stock' => 'required',
+            'minqty' => 'required'
         ]);
         $input = $request->all();
         $input['uuid'] = Uuid::uuid4();
@@ -101,7 +100,6 @@ class NewStockController extends Controller
         $data->minqty = $request->minqty;
         $data->save();
         return redirect()->back()->with('success', 'Data has been updated');
-
     }
 
     /**
